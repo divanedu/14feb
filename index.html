@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Приглашение на 14 февраля</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient">
+    <span class="glow glow-1"></span>
+    <span class="glow glow-2"></span>
+    <span class="glow glow-3"></span>
+  </div>
+
+  <main class="app" id="app">
+    <header class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">14 февраля</p>
+        <h1>Нежная история для тебя</h1>
+        <p class="subtitle">
+          Здесь - самые тёплые моменты.
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-inner">
+          <p class="card-text">«Без памяти влюблённый, он умереть готов за поцелуй.»</p>
+          <p class="daily-note" id="daily-note"></p>
+          <div class="stamp">Только для тебя</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="memories">
+      <div class="memories-head">
+        <h2>Наши лучшие воспоминания</h2>
+        <p>Фото и видео в одном красивом потоке.</p>
+      </div>
+      <button class="btn primary" id="open-reel-inline">Посмотреть воспоминания</button>
+    </section>
+
+    <section class="love-letter">
+      <h2>Письмо</h2>
+      <p>Открой страницу и узнай, что я думал о тебе в самом начале</p>
+      <a class="btn primary" href="love.html">Открыть письмо</a>
+    </section>
+  </main>
+
+  <div class="reel" id="reel" aria-hidden="true">
+    <div class="reel-header">
+      <div class="reel-title">Воспоминания</div>
+      <button class="btn ghost" id="close-reel">Закрыть</button>
+    </div>
+    <div class="reel-progress">
+      <div class="reel-progress-bar" id="reel-progress-bar"></div>
+    </div>
+    <div class="reel-track" id="reel-track"></div>
+    <div class="reel-hint" id="reel-hint">Листай вниз</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
