@@ -221,6 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = item.src;
         img.alt = item.caption || '';
         img.setAttribute('draggable', 'false');
+        img.loading = 'lazy';
+        img.decoding = 'async';
         media.appendChild(img);
       }
 
@@ -239,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function openReelView() {
     if (!reel) return;
     renderReel();
+    preloadReelImages(8);
     reel.classList.add('active');
     reel.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -251,6 +254,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (reelHint) reelHint.style.display = 'none';
       }, 4000);
     }
+  }
+
+  function preloadReelImages(count) {
+    const imgs = Array.from(reelTrack?.querySelectorAll('img') || []);
+    imgs.slice(0, count).forEach((img, index) => {
+      if (index < 2) {
+        img.loading = 'eager';
+        img.fetchPriority = 'high';
+      }
+      const pre = new Image();
+      pre.src = img.src;
+    });
   }
 
   function closeReelView() {
