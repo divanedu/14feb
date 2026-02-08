@@ -1096,4 +1096,10 @@ p {
   .letter-game {
     justify-content: center;
   }
+
+  .v-actions .btn {
+    min-width: 140px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
 }
